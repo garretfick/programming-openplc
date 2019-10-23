@@ -1,0 +1,16 @@
+= Extending the OpenPLC Runtime
+
+This chapter will get you into the guts of the OpenPLC runtime so that you can extend
+it's capabilities to add the ability to communicate using different protocols. This chapter
+beings by explaining the concept of glue variables followed by demonstrating how to add
+your own custom protocol.
+
+== Glue Variables
+
+The OpenPLC runtime provides bindings between communication protocols, such as Modbus
+or DNP3, and the program code that was described using IEC 61131-3 syntax and
+converted to C using MATIEC.
+
+The subset of variables in the program code that have a defined location are available
+for gluing. Other variables in the program code are internal to the program.
+
