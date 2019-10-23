@@ -14,3 +14,12 @@ converted to C using MATIEC.
 The subset of variables in the program code that have a defined location are available
 for gluing. Other variables in the program code are internal to the program.
 
+OpenPLC allows your application to use multiple protocols simultaneously. Allowing multiple
+protocols to write to the same sets of variables would result in unpredictable behaviour;
+therefore, OpenPLC enforces range-based boundaries for values recevied over a particular
+protocol. On the other hand, multiple protocols can read from the same set of variables
+with predictable behaviour; therefore, OpenPLC permits but does not enforce range-based
+boundaries for values that are sent over a particular protocol.
+
+To enforce these restrictions, each protocol implementation recevices a structure of
+`GlueVariables` that contain the visible values that each protocol has for input and output.
