@@ -1,0 +1,19 @@
+= DNP3
+
+OpenPLC supports running as a DNP3 outstation (server) using the OpenDNP3 library
+provided by Automatak. This chaper covers how to configure DNP3 support in OpenPLC
+and ends with an example program to test things out yourself.
+
+IMPORTANT: DNP3 is not implemented on the Windows platform.
+
+== DNP3 Basics
+
+DNP3 is a robust communication protocol often used where a device is to be monitored
+or controlled by a master. The protocol is commonly usedb by electric and water utilities.
+DNP3's integrity is achieved through extensive use of cyclic redundancy check codes and
+unlike Modbus, supports unsolicited messages (events) that reduce or eliminate the
+need for polling-based approaches.
+
+DNP3 is primarily concerned with data points. Each data point is describe by a type and
+and index. The type is normally descriptive of a physical process that generates the value.
+For example, 
