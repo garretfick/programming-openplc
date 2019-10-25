@@ -12,14 +12,12 @@ or DNP3, and the program code that was described using IEC 61131-3 syntax and
 converted to C using MATIEC.
 
 The subset of variables in the program code that have a defined location are available
-for gluing. Other variables in the program code are internal to the program.
+for gluing. Other variables in the program code are internal to the program and in general
+may be entirely unavailable due to compiler optimizations.
 
-OpenPLC allows your application to use multiple protocols simultaneously. Allowing multiple
-protocols to write to the same sets of variables would result in unpredictable behaviour;
-therefore, OpenPLC enforces range-based boundaries for values recevied over a particular
-protocol. On the other hand, multiple protocols can read from the same set of variables
-with predictable behaviour; therefore, OpenPLC permits but does not enforce range-based
-boundaries for values that are sent over a particular protocol.
+OpenPLC allows your application to use multiple protocols simultaneously. The API provides
+capabilities to enumerate located variables with their properties, so that they can be
+glued to a particular protocol implementation. The API provides futher capabilities to
+ensure efficient and exclusive access to variables and maintain safety.
 
-To enforce these restrictions, each protocol implementation recevices a structure of
-`GlueVariables` that contain the visible values that each protocol has for input and output.
+
