@@ -20,4 +20,9 @@ capabilities to enumerate located variables with their properties, so that they 
 glued to a particular protocol implementation. The API provides futher capabilities to
 ensure efficient and exclusive access to variables and maintain safety.
 
+Glue variables structures are code generated at compile time for your application using
+the glue generation application and information about located variables from your application.
+Glue variables are associated with particular protocols at runtime according to mapping
+information that is provided as external configuration information.
 
+INSERT DIAGRAM OF THE PROCESS
