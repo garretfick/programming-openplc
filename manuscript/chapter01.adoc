@@ -20,9 +20,14 @@ not define a kind.)
 The kind is normally descriptive of a physical process that generates the value,
 and helps to think in terms of electronics in understanding DNP3 types.
 
-| Kind    | Usage |
-|---------|-------|
-| Digital |       |
-| Analog  |       |
+|===
+|Kind |Usage
 
-Each 
+|Digital
+|None
+
+|Analog
+|None
+|===
+
+
