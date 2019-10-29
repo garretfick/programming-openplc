@@ -87,4 +87,5 @@ before sending the command.
 
 == Configuring DNP3
 
-You must provide define the binding between PLC locations (for example `%IW0`) to a DNP3 object and point index number.
+You must define the binding between PLC locations (for example `%IW0`) to a DNP3 object and point index number.
+While this approach is highly flexible, it is more complex than other protocol implementations.
