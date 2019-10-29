@@ -39,26 +39,26 @@ to the DNP3 master.
 |1
 |1
 |Binary input, packed
-|
+|QX/MX
 |Describes a boolean value
 
 |10
 |1
 |Binary status output, packed
-|
+|QX/MX
 |Describes the status of a boolean control
 
 |30
 |
 |Analog input
-|
+|QB/QW/QD/QL/MB/MW/MD/ML
 |Describes a continous value
 
 |40
 |
 |Analog status output
-|
-|Describes the status of a analog control
+|QB/QW/QD/QL/MB/MW/MD/ML
+|Describes the status of an analog control
 
 |===
 
@@ -71,14 +71,14 @@ from the DNP3 master.
 |12
 |1
 |Binary output command, control relay output block
-|
-|
+|IX
+|Commands a boolean control
 
 |41
 |1, 2, 3, 4
 |Analog output
-|
-|
+|IB/IW/ID/IL
+|Commands an analog control
 
 |===
 
