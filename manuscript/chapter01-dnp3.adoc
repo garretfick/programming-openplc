@@ -48,6 +48,18 @@ to the DNP3 master.
 |`QX/MX`
 |Describes the status of a boolean control
 
+|20
+|1
+|Counter
+|`QB/QW/QD/QL/MB/MW/MD/ML`
+|Describes the status of a boolean control
+
+|21
+|1
+|Frozen counter
+|`QB/QW/QD/QL/MB/MW/MD/ML`
+|Describes the status of a boolean control
+
 |30
 |
 |Analog input
@@ -61,6 +73,9 @@ to the DNP3 master.
 |Describes the status of an analog control
 
 |===
+
+TIP: Note from the table above that input and status output values are both sent from the OpenPLC DNP3
+outstation. Some DNP3 implementations do not support status output values (groups 10 and 40).
 
 OpenPLC supports the following objects and mapping to locations as commands received by OpenPLC
 from the DNP3 master.
