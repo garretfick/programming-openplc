@@ -52,13 +52,13 @@ to the DNP3 master.
 |1
 |Counter
 |`QB/QW/QD/QL/MB/MW/MD/ML`
-|Describes the status of a boolean control
+|Describes an increasing (non-negative) value.
 
 |21
 |1
 |Frozen counter
 |`QB/QW/QD/QL/MB/MW/MD/ML`
-|Describes the status of a boolean control
+|Describes a counter can be frozen and reports the value at that instant.
 
 |30
 |
@@ -75,7 +75,8 @@ to the DNP3 master.
 |===
 
 TIP: Note from the table above that input and status output values are both sent from the OpenPLC DNP3
-outstation. Some DNP3 implementations do not support status output values (groups 10 and 40).
+outstation. Some DNP3 implementations do not support status output values (groups 10 and 40). It is usually
+better to use group 1 or group 30 for compatibility.
 
 OpenPLC supports the following objects and mapping to locations as commands received by OpenPLC
 from the DNP3 master.
