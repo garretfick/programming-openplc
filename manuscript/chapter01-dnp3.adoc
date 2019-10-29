@@ -113,5 +113,5 @@ for locations have the key `bind_location`. Typical applications will have more 
 Each bound items follows the syntax:
 
 ```
-bind_location=name:%QX0.0;group:1;index:0;
+bind_location=name:%QX0.0,group:1,index:0,
 ```
