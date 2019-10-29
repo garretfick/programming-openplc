@@ -46,7 +46,7 @@ to the DNP3 master.
 |1
 |Binary status output, packed
 |`QX/MX`
-|Describes the status of a boolean control; The operation type must be one of `LATCH_ON (0x3)` or `LATCH_OFF (0x4)`.
+|Describes the status of a boolean control
 
 |30
 |
@@ -72,7 +72,7 @@ from the DNP3 master.
 |1
 |Binary output command, control relay output block
 |`IX`
-|Commands a boolean control
+|Commands a boolean control; The operation type must be one of `LATCH_ON (0x3)` or `LATCH_OFF (0x4)`.
 
 |41
 |1, 2, 3, 4
@@ -85,9 +85,6 @@ from the DNP3 master.
 OpenPLC does not implement select before operate behavior and values do not need to selected
 before sending the command.
 
-IMPORTANT: Unlike Modbus addess mapping, you must provide mapping information from PLC locations to DNP3 object/point index
-number in a configuration file.
-
 == Configuring DNP3
 
-DNP3 is currently c
+You must provide define the binding between PLC locations (for example `%IW0`) to a DNP3 object and point index number.
