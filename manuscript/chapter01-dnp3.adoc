@@ -1,0 +1,89 @@
+= DNP3
+
+OpenPLC supports running as a DNP3 outstation (server) using the OpenDNP3 library
+provided by Automatak. This chaper covers how to configure DNP3 support in OpenPLC
+and ends with an example program to test things out yourself.
+
+IMPORTANT: DNP3 is not implemented on the Windows platform.
+
+== DNP3 Basics
+
+DNP3 is a robust communication protocol often used where a device is to be monitored
+or controlled by a master. The protocol is commonly usedb by electric and water utilities.
+DNP3's integrity is achieved through extensive use of cyclic redundancy check codes and
+unlike Modbus, supports unsolicited messages (events) that reduce or eliminate the
+need for polling-based approaches.
+
+DNP3 is primarily concerned with data points. Each data point is describe by a kind and
+and index. (The astute reader will note that a type in DNP3 has a richer model and does
+not define a kind.)
+The kind is normally descriptive of a physical process that generates the value,
+and helps to think in terms of electronics in understanding DNP3 types.
+
+OpenPLC supports configuration as a DNP3 outstation (server). Outstations typically
+make local measurements and send measurement values to the DNP3 master. The outstation
+supports control operations from the master.
+
+== Supported Objects
+
+DNP3 communicates *objects* between the outstation and server, defined by a unique
+group and variation. Different objects with the same group and variation are identified
+by the point index number.
+
+OpenPLC supports the following objects and mapping to locations as values sent from OpenPLC
+to the DNP3 master.
+
+
+
+|1
+|1
+|Binary input, packed
+|
+|Describes a boolean value
+
+|10
+|1
+|Binary status output, packed
+|
+|Describes the status of a boolean control
+
+
+
+|30
+|
+|Analog input
+|
+|Describes a continous value
+
+|40
+|
+|Analog status output
+|
+|Describes the status of a analog control
+
+|===
+
+OpenPLC supports the following objects and mapping to locations as commands received by OpenPLC
+from the DNP3 master.
+
+|===
+|Group |Variation| Name |Location |Description
+
+|12
+|1
+|Binary output command, control relay output block
+|
+|
+
+|41
+|1, 2, 3, 4
+|Analog output
+|
+|
+
+|===
+
+OpenPLC does not implement select before operate behavior and values do not need to selected
+before sending the command.
+
+== Configuring DNP3
