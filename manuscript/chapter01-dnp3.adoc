@@ -105,3 +105,13 @@ before sending the command.
 
 You must define the binding between PLC locations (for example `%IW0`) to a DNP3 object and point index number.
 While this approach is highly flexible, it is more complex than other protocol implementations.
+
+Binding information is specified in the `dnp3.cfg` configuration file. This file is automatically read when
+the DNP3 outstation starts. The file format defines key-value pairs separated by the equal (`=`) sign. Bindings
+for locations have the key `bind_location`. Typical applications will have more than one `bind_location` item.
+
+Each bound items follows the syntax:
+
+```
+bind_location=name:%QX0.0;group:1;index:0;
+```
