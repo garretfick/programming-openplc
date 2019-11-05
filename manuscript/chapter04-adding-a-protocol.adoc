@@ -2,7 +2,7 @@
 
 This chapter will get you into the guts of the OpenPLC runtime so that you can extend
 it's capabilities to add the ability to communicate using different protocols. This chapter
-beings by explaining the concept of glue variables followed by demonstrating how to add
+beings by explaining the concept of glue variables and services, followed by demonstrating how to add
 your own custom protocol.
 
 == Glue Variables
@@ -22,7 +22,22 @@ ensure efficient and exclusive access to variables and maintain safety.
 
 Glue variables structures are code generated at compile time for your application using
 the glue generation application and information about located variables from your application.
-Glue variables are associated with particular protocols at runtime according to mapping
-information that is provided as external configuration information.
+Glue variables are associated with particular protocols at runtime. The specifics of the mapping
+depend on the particular protocol.
 
 INSERT DIAGRAM OF THE PROCESS
+
+== Services
+
+The runtime is normally extended by adding a service. Services can participate in the runtime
+in two ways:
+
+* they may initialization when the runtime starts
+* they may be starated and stopped based on configuration and on demand
+
+INSERT DIAGRAM OF THE PROCESS
+
+Services register themselves as an instance of the Service class which enables the runtime
+to discover the service and manage the lifecycle.
+
+
