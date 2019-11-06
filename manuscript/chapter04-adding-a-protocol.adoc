@@ -32,7 +32,7 @@ INSERT DIAGRAM OF THE PROCESS
 The runtime is normally extended by adding a service. Services can participate in the runtime
 in two ways:
 
-* they may initialization when the runtime starts
+* they may participate in initialization and finalization of the runtime
 * they may be starated and stopped based on configuration and on demand
 
 INSERT DIAGRAM OF THE PROCESS
